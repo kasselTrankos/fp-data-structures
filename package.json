@@ -1,0 +1,18 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bbva-web-components/bbva-gema-sustainability-dm": "git+ssh://git@globaldevtools.bbva.com:7999/~antonio.aguayo.next/bbva-gema-sustainability-dm.git",
+    "fluture": "^14.0.0",
+    "ramda": "^0.27.1",
+    "sanctuary": "^3.1.0"
+  }
+}
