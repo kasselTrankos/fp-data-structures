@@ -1,23 +1,48 @@
 // binary tree
-function BinaryTree(left, parent, right) {
+function BinaryTree(value, right, left) {
     this.left = left
-    this.root = this.root || parent
+    this.value = value
     this.right = right
 }
 
 // applicative :: of -> f -> a  -> f a
-BinaryTree.of = function(left, parent, right) {
-    return new BinaryTree(left, parent, right)
+BinaryTree.of = function(value) {
+    return new BinaryTree(value)
 }
 
 BinaryTree.prototype.map = function(f) {
     return new BinaryTree.of(
         f(this.left), 
-        this.root instanceof BinaryTree ? this.root.map(f) : f(this.root), 
+        this.value instanceof BinaryTree ? this.value.map(f) : f(this.value), 
         f(this.right)
     )
 }
+BinaryTree.prototype.insert = function(value) {
 
+    if(value >= this.value ) {
+       if(this.right instanceof BinaryTree) this.right.insert(value)
+       else this.right = BinaryTree.of(value)
+    }
+    if(value < this.value) {
+        if(this.left instanceof BinaryTree) this.left.insert(value)
+        else this.left = BinaryTree.of(value)
+    }
+    
+    return this
+}
+
+
+
+
+// f => f a ~> (a -> Boolean) -> f a
+BinaryTree.prototype.filter = function (f) {
+
+}
+
+
+BinaryTree.prototype.extract = function() {
+    return this.value
+}
 
 
 
