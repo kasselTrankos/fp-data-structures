@@ -6,3 +6,6 @@ const b = BinaryTree.of(2, a, 2)
 const f = x => x + 3;
 
 console.log(b.map(f))
+console.log(b.root())
+
+
